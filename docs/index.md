@@ -1,5 +1,5 @@
 ---
-title: Pumas-AI Workshop PLACEHOLDER
+title: Pumas-AI NLME Model Assessment Workshop
 description: CHANGE ME.
 ---
 
@@ -27,9 +27,7 @@ please send an email to <training@pumas.ai>.
 
 ## Authors
 
-- Author 1 - <email@example.com>
-- Author 2 - <email@example.com>
-- Author 3 - <email@example.com>
+- Jose Storopoli - <jose@pumas.ai>
 
 ## License
 
