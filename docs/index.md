@@ -15,14 +15,13 @@ It covers how:
 - plot goodness of fit (GoF) plots
 - perform visual predictive checks (VPCs)
 
-
 The following Julia files are provided:
 
 1. `00-model_fits.jl`: defines and fits a one- and a two-compatment IV models that will be used throghout the workshop
 1. `01-inspect.jl`: an overview of the `inspect` function
 1. `02-predict.jl`: covers how to use the `predict` function to do rich population and individual predictions
 1. `03-metrics.jl`: an overview of the different model metrics available in Pumas and the `goodness_of_fit` plotting function
-1. `04-vpc.jl`: covers how to run and plot VPCs 
+1. `04-vpc.jl`: covers how to run and plot VPCs
 
 !!! success "Prerequisites"
 
@@ -32,9 +31,15 @@ The following Julia files are provided:
 
 ## Schedule
 
-| Time (HH:MM) | Activity | Description                              |
-| ------------ | -------- | ---------------------------------------- |
-| 00:00        | Setup    | Download files required for the workshop |
+| Time (HH:MM) | Activity                 | Description                                                                              |
+| ------------ | ------------------------ | ---------------------------------------------------------------------------------------- |
+| 00:00        | Setup                    | Download files required for the workshop                                                 |
+| 00:05        | Model Fits               | Walktrough and fit of the competing one- and two-compatment models in `00-model_fits.jl` |
+| 00:15        | Model Inspection         | Showcase `01-inspect.jl`                                                                 |
+| 00:25        | Model Predictions        | Showcase `02-predict.jl`                                                                 |
+| 00:35        | Model Metrics            | Showcase `03-metrics.jl`                                                                 |
+| 00:45        | Visual Predictive Checks | Showcase `04-vpc.jl`                                                                     |
+| 00:55        | Closing Remarks          | See if there are any questions and feedback                                              |
 
 ## Get in touch
 
