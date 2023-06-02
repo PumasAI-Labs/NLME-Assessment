@@ -124,9 +124,8 @@ params_2cmt = (;
   tvq=0.01,
   tvvp=10,
   Ω=Diagonal([0.01, 0.01]),
-  σ²_add=0.01,
-  σ²_prop=0.01
+  σ_add=0.1,
+  σ_prop=0.1
 )
 
 fit_2cmt = fit(model_2cmt, pop, params_2cmt, FOCE())
-
