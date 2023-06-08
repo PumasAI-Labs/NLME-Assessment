@@ -44,7 +44,7 @@ ipred
 
 wres
 
-: Weighted residuals. They are the difference between observed data and the predicted data. In other words, it's a measure of the error in the prediction. But weighted by the precision of the observations, i.e. they are divided by the standard deviation of the observations.
+: Individual Weighted residuals. They are the difference between observed data and the predicted data. In other words, it's a measure of the error in the prediction. But weighted by the precision of the observations, i.e. they are divided by the standard deviation of the observations.
 
 ebe
 
@@ -54,13 +54,29 @@ icoef
 
 : Individual coefficients. They are calculated using the population coefficients and the individual parameters.
 
-dose control parameters
+Dose control parameters (DCP)
 
 : Parameters that govern the dosage regimen of a drug, and the associated pharmacokinetic properties of the drug in the body. In Pumas models they are: lag of the dose, bioavability of the dose, rate of dosing, and duration of the dosing.
+
+Individual normalized prediction distribution errors (NPDE)
+
+: Similar to the individual weighted residuals, but goes further by transforming the prediction error so that, under the correct model, should be standard normally distributed.
 
 NM-TRAN
 
 : Official NONMEM dataset format. Check [Pumas documentation on Data Representation](https://docs.pumas.ai/stable/basics/data_representation) for more information.
+
+Log-likelihood
+
+: The log of the joint probability of the observed data viewed as a function of the parameters of a statistical model.
+
+Akaike Information Criterion (AIC)
+
+: An estimator of prediction error and thereby relative quality of statistical models for a given set of data. It uses the model's log-likelihood and penalizes the model's by the number of parameters used. Models with higher log-likelihood values and less parameters are preferred.
+
+Bayesian Information Criterion (BIC)
+
+: An estimator of prediction error and quality of statistical models for a given set of data. It is similar to the AIC and also uses the log-likelihood.
 
 Goodness of fit
 
