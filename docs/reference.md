@@ -13,17 +13,22 @@ title: Reference Sheets for Pumas-AI NLME Model Assessment Workshop
 
 ## Summary of Basic Commands
 
-| Action                                         | Command                                              | Observations                                                                                                               |
-| ---------------------------------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Fit a Model using `FOCE()`                     | `fit(model, population, initial_parameters, FOCE())` | `initial_parameters` is a `NamedTuple` of parameter name and values                                                        |
-| Generate a `inspect` result                    | `inspect(fit_result)`                                | Calculates pred, ipred, wres, ebe, icoef, and dcp (if applicable), in one go                                               |
-| Generate a `inspect` result with NPDE          | `inspect(fit_result; nsim=200)`                      | Calculates pred, ipred, wres, ebe, icoef, dcp (if applicable), and NPDE with 200 times each subject is simulated in one go |
-| Convert an `inspect` result into a `DataFrame` | `DataFrame(inspect_result)`                          | The resulting `DataFrame` will be NM-TRAN-formatted and can be parsed as a `Population`                                    |
-| Generate a `DataFrame` of pred and ipred       | `DataFrame(predict(fit_result))`                     | NM-TRAN-formatted `DataFrame`                                                                                              |
-| Generate a `DataFrame` of wres                 | `DataFrame(wresiduals(fit_result))`                  | NM-TRAN-formatted `DataFrame`                                                                                              |
-| Generate a `DataFrame` of ebe                  | `DataFrame(ebe(fit_result))`                         | NM-TRAN-formatted `DataFrame`                                                                                              |
-| Generate a `DataFrame` of icoef                | `DataFrame(icoef(fit_result))`                       | NM-TRAN-formatted `DataFrame`                                                                                              |
-| Generate a `DataFrame` of dcp                  | `DataFrame(dosecontrol(fit_result))`                 | NM-TRAN-formatted `DataFrame`                                                                                              |
+| Action | Command | Observations |
+| ------ | ------- | ------------ |
+| Fit a Model using `FOCE()` | `fit(model, population, initial_parameters, FOCE())` | `initial_parameters` is a `NamedTuple` of parameter name and values |
+| Generate a `inspect` result | `inspect(fit_result)` | Calculates pred, ipred, wres, ebe, icoef, and dcp (if applicable), in one go |
+| Generate a `inspect` result with NPDE | `inspect(fit_result; nsim=200)` | Calculates pred, ipred, wres, ebe, icoef, dcp (if applicable), and NPDE with 200 times each subject is simulated in one go |
+| Convert an `inspect` result into a `DataFrame` | `DataFrame(inspect_result)` | The resulting `DataFrame` will be NM-TRAN-formatted and can be parsed as a `Population` |
+| Generate a `DataFrame` of pred and ipred | `DataFrame(predict(fit_result))`                     | NM-TRAN-formatted `DataFrame` |
+| Generate a `DataFrame` of wres | `DataFrame(wresiduals(fit_result))` | NM-TRAN-formatted `DataFrame`                                                                                              |
+| Generate a `DataFrame` of ebe                  | `DataFrame(ebe(fit_result))` | NM-TRAN-formatted `DataFrame`                                                                                              |
+| Generate a `DataFrame` of icoef                | `DataFrame(icoef(fit_result))` | NM-TRAN-formatted `DataFrame` |
+| Generate a `DataFrame` of dcp                  | `DataFrame(dosecontrol(fit_result))` | NM-TRAN-formatted `DataFrame` |
+| Generate a `DataFrame` of pred and ipred with custom time profile | `DataFrame(predict(fit_result; obstimes=interval))` | NM-TRAN-formatted `DataFrame` and interval is a Julia interval (e.g. `1:10`) |
+| Generate a `DataFrame` of all metrics from a fitted model | `metrics_table(fit_result)` | Need to load `PumasUtilities` package |
+| Calculate the log-likelihood of a fitted model | `loglikelihood(fit_result)` | This value is with the constant |
+| Calculate the log-likelihood of a any model given any population, parameter estimates, and estimation method | `loglikelihood(model, population, parameter_estimates, estimation_method)` | This value is with the constant. `parameter_estimates` is a `NamedTuple` of parameter estimates and `estimation_method` is a Pumas' estimation method (e.g. `FOCE()` or `LaplaceI()`) |
+| Plot godness of fit | `goodness_of_fit(inspect_result)` | 4-panel plot with observations versus pred/ipred and wres versus time/ipred. If the `inspect_result` has NPDEs it will plot these instead of wres |
 
 ## Glossary
 
@@ -54,6 +59,10 @@ dose control parameters
 NM-TRAN
 
 : Official NONMEM dataset format. Check [Pumas documentation on Data Representation](https://docs.pumas.ai/stable/basics/data_representation) for more information.
+
+Goodness of fit
+
+: How well a model can accuratelly predict or reproduce the observed data. In Pumas, there is a standard four-panel plot that plots established goodness of fit plots.
 
 ## Get in touch
 
