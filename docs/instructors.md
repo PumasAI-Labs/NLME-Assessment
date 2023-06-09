@@ -8,11 +8,11 @@ Start with the `00-model_fits.jl` script.
 This covers already what the `NLME-Model` workshop teaches about model definition and model fitting.
 There are two PK models of an IV drug infusion.
 The first is a 1-compartment model and the second is a 2-compartment model.
-Go over the model explaning the main differences between them.
+Go over the model explaining the main differences between them.
 You'll use these models to explain how to assess and compare models in Pumas.
 
 Next, proceed to the `01-inspect.jl` script.
-This file focuses in the `inspect` function.
+This file focuses on the `inspect` function.
 Showcase how to use and explain all the calculations it is doing under the hood:
 pred, ipred, wres, ebe, icoef, dcp, and NPDE.
 If any user has questions about these concepts they are explained in the glossary in the reference sheet.
@@ -20,7 +20,7 @@ These can also be individually retrieved using the convenience functions and the
 Don't forget to show that the `inspect` function can generate NPDEs with the `nsim` keyword argument.
 
 Now, proceed to the `02-predict.jl` script.
-Here you'll explain about the `predict` function that generates the `_pred` and `_ipred` suffix columns for every variable in defined in the `@derived` model block.
+Here you'll explain about the `predict` function that generates the `_pred` and `_ipred` suffix columns for every variable defined in the `@derived` model block.
 Explain the difference between those two columns, use the glossary in the reference sheet if necessary.
 If the user wants to have a more dense or an altogether different time profile for the predictions than the original one in the data,
 the user can do that by passing an interval/vector of time values to the optional keyword argument `obstimes`.

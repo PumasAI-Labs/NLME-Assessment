@@ -27,8 +27,8 @@ title: Reference Sheets for Pumas-AI NLME Model Assessment Workshop
 | Generate a `DataFrame` of pred and ipred with custom time profile | `DataFrame(predict(fit_result; obstimes=interval))` | NM-TRAN-formatted `DataFrame` and interval is a Julia interval (e.g. `1:10`) |
 | Generate a `DataFrame` of all metrics from a fitted model | `metrics_table(fit_result)` | Need to load `PumasUtilities` package |
 | Calculate the log-likelihood of a fitted model | `loglikelihood(fit_result)` | This value is with the constant |
-| Calculate the log-likelihood of a any model given any population, parameter estimates, and estimation method | `loglikelihood(model, population, parameter_estimates, estimation_method)` | This value is with the constant. `parameter_estimates` is a `NamedTuple` of parameter estimates and `estimation_method` is a Pumas' estimation method (e.g. `FOCE()` or `LaplaceI()`) |
-| Plot godness of fit | `goodness_of_fit(inspect_result)` | 4-panel plot with observations versus pred/ipred and wres versus time/ipred. If the `inspect_result` has NPDEs it will plot these instead of wres. Need to load `PumasUtilities` package |
+| Calculate the log-likelihood of any model given any population, parameter estimates, and estimation method | `loglikelihood(model, population, parameter_estimates, estimation_method)` | This value is with the constant. `parameter_estimates` is a `NamedTuple` of parameter estimates and `estimation_method` is a Pumas' estimation method (e.g. `FOCE()` or `LaplaceI()`) |
+| Plot goodness of fit | `goodness_of_fit(inspect_result)` | 4-panel plot with observations versus pred/ipred and wres versus time/ipred. If the `inspect_result` has NPDEs it will plot these instead of wres. Need to load `PumasUtilities` package |
 | Plot a visual predictive check | `vpc_plot(vpc_result)` | `vpc_result` is the result of `vpc(fit_result)`. Need to load `PumasUtilities` package |
 | Plot a prediction-corrected visual predictive check | `vpc_plot(vpc_result)` | `vpc_result` is the result of `vpc(fit_result; prediction_correction=true)`. Need to load `PumasUtilities` package |
 
@@ -80,7 +80,7 @@ Bayesian Information Criterion (BIC)
 
 Goodness of fit
 
-: How well a model can accuratelly predict or reproduce the observed data. In Pumas, there is a standard four-panel plot that plots established goodness of fit plots.
+: How well a model can accurately predict or reproduce the observed data. In Pumas, there is a standard four-panel plot that plots established goodness of fit plots.
 
 Visual predictive check (VPC)
 

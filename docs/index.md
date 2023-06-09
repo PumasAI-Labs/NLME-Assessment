@@ -17,7 +17,7 @@ It covers how:
 
 The following Julia files are provided:
 
-1. `00-model_fits.jl`: defines and fits a one- and a two-compatment IV models that will be used throghout the workshop
+1. `00-model_fits.jl`: defines and fits a one- and a two-compartment IV models that will be used throughout the workshop
 1. `01-inspect.jl`: an overview of the `inspect` function
 1. `02-predict.jl`: covers how to use the `predict` function to do rich population and individual predictions
 1. `03-metrics.jl`: an overview of the different model metrics available in Pumas and the `goodness_of_fit` plotting function
@@ -34,7 +34,7 @@ The following Julia files are provided:
 | Time (HH:MM) | Activity                 | Description                                                                              |
 | ------------ | ------------------------ | ---------------------------------------------------------------------------------------- |
 | 00:00        | Setup                    | Download files required for the workshop                                                 |
-| 00:05        | Model Fits               | Walktrough and fit of the competing one- and two-compatment models in `00-model_fits.jl` |
+| 00:05        | Model Fits               | Walkthrough and fit of the competing one- and two-compartment models in `00-model_fits.jl` |
 | 00:15        | Model Inspection         | Showcase `01-inspect.jl`                                                                 |
 | 00:25        | Model Predictions        | Showcase `02-predict.jl`                                                                 |
 | 00:35        | Model Metrics            | Showcase `03-metrics.jl`                                                                 |
