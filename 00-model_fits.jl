@@ -5,8 +5,7 @@ using PharmaDatasets
 
 # Read in data
 # IV infusion given over 2 hours with demographic information (age, weight, sex, crcl)
-pkfile = dataset("nlme_sample.csv", String)
-pkdata = CSV.read(pkfile, DataFrame; missingstring=["NA", ""])
+pkdata = dataset("nlme_sample")
 
 pop = read_pumas(
   pkdata;
