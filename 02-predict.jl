@@ -14,4 +14,4 @@ predict_1cmt = DataFrame(predict(model_1cmt, pop, coef(fit_1cmt)))
 # Suppose you want a more richer/denser pred/ipred time profile
 # You can do that with the keyword argument obstimes
 # it will "extend" the original observation profile to encompass the desired obstimes
-predict_1cmt_custom = DataFrame(predict(fit_1cmt; obstimes=168:172))
+predict_1cmt_custom = DataFrame(predict(fit_1cmt; obstimes = 168:172))

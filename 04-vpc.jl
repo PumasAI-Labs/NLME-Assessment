@@ -10,7 +10,7 @@ vpc_plot(vpc_1cmt)
 vpc_plot(vpc_2cmt)
 
 # You can also use a prediction-corrected VPC with the keyword argument prediction_correction
-vpc_1cmt_pc = vpc(fit_1cmt; prediction_correction=true)
-vpc_2cmt_pc = vpc(fit_2cmt; prediction_correction=true)
+vpc_1cmt_pc = vpc(fit_1cmt; prediction_correction = true)
+vpc_2cmt_pc = vpc(fit_2cmt; prediction_correction = true)
 vpc_plot(vpc_1cmt_pc)
 vpc_plot(vpc_2cmt_pc)
