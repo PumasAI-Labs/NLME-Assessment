@@ -9,13 +9,13 @@ pkdata = dataset("nlme_sample")
 
 pop = read_pumas(
   pkdata;
-  id=:ID,
-  time=:TIME,
-  amt=:AMT,
-  observations=[:DV],
-  cmt=:CMT,
-  evid=:EVID,
-  rate=:RATE
+  id = :ID,
+  time = :TIME,
+  amt = :AMT,
+  observations = [:DV],
+  cmt = :CMT,
+  evid = :EVID,
+  rate = :RATE,
 )
 
 # 1-compartment model
@@ -26,19 +26,27 @@ model_1cmt = @model begin
   end
 
   @param begin
-    "Clearance (L/hr)"
-    tvcl ∈ RealDomain(; lower=0)
-    "Volume Central Compartment (L)"
-    tvvc ∈ RealDomain(; lower=0)
     """
-    - ΩCL
-    - ΩVc
+    Clearance (L/hr)
+    """
+    tvcl ∈ RealDomain(; lower = 0)
+    """
+    Volume Central Compartment (L)
+    """
+    tvvc ∈ RealDomain(; lower = 0)
+    """
+      - ΩC
+      - ΩV
     """
     Ω ∈ PDiagDomain(2)
-    "Additive RUV"
-    σ_add ∈ RealDomain(; lower=0)
-    "Proportional RUV"
-    σ_prop ∈ RealDomain(; lower=0)
+    """
+    Additive RUV
+    """
+    σ_add ∈ RealDomain(; lower = 0)
+    """
+    Proportional RUV
+    """
+    σ_prop ∈ RealDomain(; lower = 0)
   end
 
   @random begin
@@ -61,13 +69,8 @@ model_1cmt = @model begin
   end
 end
 
-params_1cmt = (;
-  tvvc=5,
-  tvcl=0.2,
-  Ω=Diagonal([0.01, 0.01]),
-  σ_add=0.1,
-  σ_prop=0.1
-)
+params_1cmt =
+  (; tvvc = 5, tvcl = 0.2, Ω = Diagonal([0.01, 0.01]), σ_add = 0.1, σ_prop = 0.1)
 
 fit_1cmt = fit(model_1cmt, pop, params_1cmt, FOCE())
 
@@ -79,23 +82,35 @@ model_2cmt = @model begin
   end
 
   @param begin
-    "Clearance (L/hr)"
-    tvcl ∈ RealDomain(; lower=0)
-    "Volume Central Compartment (L)"
-    tvvc ∈ RealDomain(; lower=0)
-    "Intercompartmental Clearance (L/hr)"
-    tvq ∈ RealDomain(; lower=0)
-    "Volume Peripheral Compartment (L)"
-    tvvp ∈ RealDomain(; lower=0)
     """
-    - ΩCL
-    - ΩVc
+    Clearance (L/hr)
+    """
+    tvcl ∈ RealDomain(; lower = 0)
+    """
+    Volume Central Compartment (L)
+    """
+    tvvc ∈ RealDomain(; lower = 0)
+    """
+    Intercompartmental Clearance (L/hr)
+    """
+    tvq ∈ RealDomain(; lower = 0)
+    """
+    Volume Peripheral Compartment (L)
+    """
+    tvvp ∈ RealDomain(; lower = 0)
+    """
+      - ΩC
+      - ΩV
     """
     Ω ∈ PDiagDomain(2)
-    "Additive RUV"
-    σ_add ∈ RealDomain(; lower=0)
-    "Proportional RUV"
-    σ_prop ∈ RealDomain(; lower=0)
+    """
+    Additive RUV
+    """
+    σ_add ∈ RealDomain(; lower = 0)
+    """
+    Proportional RUV
+    """
+    σ_prop ∈ RealDomain(; lower = 0)
   end
 
   @random begin
@@ -118,13 +133,13 @@ model_2cmt = @model begin
 end
 
 params_2cmt = (;
-  tvvc=5,
-  tvcl=0.02,
-  tvq=0.01,
-  tvvp=10,
-  Ω=Diagonal([0.01, 0.01]),
-  σ_add=0.1,
-  σ_prop=0.1
+  tvvc = 5,
+  tvcl = 0.02,
+  tvq = 0.01,
+  tvvp = 10,
+  Ω = Diagonal([0.01, 0.01]),
+  σ_add = 0.1,
+  σ_prop = 0.1,
 )
 
 fit_2cmt = fit(model_2cmt, pop, params_2cmt, FOCE())
