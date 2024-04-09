@@ -17,16 +17,16 @@ bic(fit_1cmt)
 # It can compute a loglikelihood for any model given any population, parameter values, and estimation method
 # This is helpful for model conversions from other software/tools
 loglikelihood(
-  model_1cmt,
-  pop,
-  (; # NamedTuple of parameter values
-    tvcl = 0.2,
-    tvvc = 5,
-    Ω = Diagonal([0.1, 0.1]),
-    σ_add = 0.01,
-    σ_prop = 0.05,
-  ),
-  FOCE(),
+    model_1cmt,
+    pop,
+    (; # NamedTuple of parameter values
+        tvcl = 0.2,
+        tvvc = 5,
+        Ω = Diagonal([0.1, 0.1]),
+        σ_add = 0.01,
+        σ_prop = 0.05,
+    ),
+    FOCE(),
 )
 
 # There are several plotting functions available in Pumas
